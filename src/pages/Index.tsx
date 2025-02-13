@@ -1,16 +1,19 @@
 
-import { Activity, TrendingDown, ArrowUpRight, Leaf } from "lucide-react";
+import { Activity, TrendingDown, ArrowUpRight, Leaf, Brain, Link, Cpu } from "lucide-react";
 import { MetricCard } from "@/components/MetricCard";
 import { SupplyChainChart } from "@/components/SupplyChainChart";
+import { PredictiveAnalytics } from "@/components/PredictiveAnalytics";
+import { BlockchainTracker } from "@/components/BlockchainTracker";
+import { IoTMonitoring } from "@/components/IoTMonitoring";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-secondary to-background p-8">
       <div className="max-w-7xl mx-auto space-y-8 animate-fadeIn">
         <header className="space-y-2">
-          <h1 className="text-4xl font-bold tracking-tight">Supply Chain Analytics</h1>
+          <h1 className="text-4xl font-bold tracking-tight">AI-Powered Supply Chain Analytics</h1>
           <p className="text-muted-foreground">
-            Real-time insights into your sustainable supply chain performance
+            Real-time insights and autonomous optimization for sustainable supply chains
           </p>
         </header>
 
@@ -41,10 +44,17 @@ const Index = () => {
           />
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <PredictiveAnalytics />
           <SupplyChainChart />
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-3">
           <div className="glass-card rounded-lg p-6 space-y-6">
-            <h3 className="text-lg font-semibold">Recent Alerts</h3>
+            <h3 className="text-lg font-semibold flex items-center gap-2">
+              <Brain className="h-5 w-5" />
+              AI Insights
+            </h3>
             <div className="space-y-4">
               {[
                 { title: "Potential supply delay detected", severity: "warning" },
@@ -66,6 +76,8 @@ const Index = () => {
               ))}
             </div>
           </div>
+          <BlockchainTracker />
+          <IoTMonitoring />
         </div>
       </div>
     </div>
